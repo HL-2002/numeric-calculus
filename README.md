@@ -37,6 +37,6 @@ git commit -m "mensaje de confirmación"
 
 subir los cambios al repo en github:
 ```bash
-git push
+git push --set-upstream origin tu_rama
 ```
 
