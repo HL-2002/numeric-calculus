@@ -32,6 +32,9 @@ def  main():
     Z1 = z1(Xi,Yi)
     Z2 = z2(Xi,Yi)
     
+      # result of ecuation x,y,z
+    point_intersection = np.linalg.solve(A,B)
+        
     
     
     
@@ -50,14 +53,22 @@ def  main():
                         color='orange',
                         label='Ecuación 3')
     
+    # render intersecion point
+    graph.scatter(point_intersection[0],point_intersection[1],point_intersection[2],color="red",marker="o",label="intersecion",linewidth=8)
+    
+    # set labels
+    graph.set_title('Ecuaciones 3x3')
+    graph.set_xlabel('X')
+    graph.set_ylabel('Y')
+    graph.set_zlabel('Z')
+    graph.legend()
 
+    # show graph
     plt.show()
         
         
         
-    # result of ecuation x,y,z
-    X = np.linalg.solve(A,B)
-    print(X)
+  
     
     
     
