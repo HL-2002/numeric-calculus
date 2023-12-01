@@ -17,22 +17,41 @@ def  main():
     # generate range for x and y
     ax = -5
     bx = 5
-    ay = -7
-    by = 7
+    ay = ax-2
+    by = bx+2
     params = 21
     
     xi = np.linspace(ax,bx,params)
     yi = np.linspace(ay,by,params)
     
     # generate grid
-    X,Y = np.meshgrid(xi,yi)
+    Xi,Yi = np.meshgrid(xi,yi)
         
     # evalute cordinate
-    Z0 = z0(X,Y)
-    Z1 = z1(X,Y)
-    Z2 = z2(X,Y)
+    Z0 = z0(Xi,Yi)
+    Z1 = z1(Xi,Yi)
+    Z2 = z2(Xi,Yi)
     
     
+    
+    
+    # create a figure
+    figure = plt.figure()
+    graph = figure.add_subplot(111, projection='3d')
+    
+    # add planes
+    graph.plot_wireframe(Xi,Yi,Z0,
+                       color ='blue',
+                       label='Ecuación 1')
+    graph.plot_wireframe(Xi,Yi,Z1,
+                         color='green'
+                         ,label='Ecuación 2')    
+    graph.plot_wireframe(Xi,Yi,Z2,
+                        color='orange',
+                        label='Ecuación 3')
+    
+
+    plt.show()
         
         
         
