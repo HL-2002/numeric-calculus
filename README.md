@@ -39,4 +39,7 @@ subir los cambios al repo en github:
 ```bash
 git push --set-upstream origin tu_rama
 ```
+> [!TIP]
+> puedes usar -u que es equivalente a --set-upstream
+
 
