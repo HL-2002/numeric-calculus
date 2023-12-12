@@ -1,45 +1,8 @@
-# Paso a paso para crear tu rama y añadir tus archivos
+# Calculo numerico
 
-### clonar repo
-```bash
-git clone  "https://github.com/HL-2002/numeric-calculus"
-```
+Repositorio que contiene un conjunto de proyectos sobre calculo numerico
 
-### traer los cambios del repo
-```bash
-git pull
-```
-
-### Creación de nueva rama 
-
-```bash
-git checkout -b "tu-nombre"
-```
-o  si ya la creaste
-
-```bash
-git checkout "tu_rama"
-```
-
-
-### Añadir tus archivos y subir al repo
-
-Trabaja tus propios archivos, y cuando estés listo añádelos al repo local:
-```bash
-git add archivo_nombre # añadir archivo de forma individual 
-git add . # añadir todos los archivos 
-```
-
-Tras añadir los archivos, confirma los cambios:
-```bash
-git commit -m "mensaje de confirmación"
-```
-
-subir los cambios al repo en github:
-```bash
-git push --set-upstream origin tu_rama
-```
-> [!TIP]
-> puedes usar -u que es equivalente a --set-upstream
-
-
+## indice
+- [projecto 1](./project-1/)
+  - [metodo de eliminacion de gaus](./project-1/equation.py)
+  - [Cifras significativas y operaciones](./project-1/Cifas%20Significativas%20y%20Operaciones%20Elementales.ipynb)
