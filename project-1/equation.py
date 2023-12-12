@@ -149,7 +149,7 @@ def main():
 
     # Solve and print matrix's solution
     solution = resolve(matrix)
-    print(*[f"x{i+1} = {solution[i]:.2f}" for i in range(len(solution))], sep="\n")
+    print(*[f"x{i+1} = {solution[i]}" for i in range(len(solution))], sep="\n")
 
 
 if __name__ == "__main__":
