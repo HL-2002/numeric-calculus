@@ -47,6 +47,11 @@ def resolve(matrix: list) -> dict:
     # Checking for free variables
     if (matrix[-1][-1] == 0 and matrix[-1][-2] == 0):
         solution[-1] = "free"
+    # Inconsistent LSE
+    elif ((matrix[-1][-1] == 0 and matrix[-1][-2] != 0) or 
+        (matrix[-1][-1] != 0 and matrix[-1][-2] == 0)):
+        print("Error: SEL inconsistente")
+        sys.exit(1)
 
     # Validate pivots of diagonal, set value as free if not a pivot
     k = 0   # To check the next pivot instead of the usual
@@ -111,11 +116,10 @@ def print_matrix(name:str, matrix: list) -> None:
     # Add the matrix to the table
     s.extend(matrix) 
     # Print tabulated matrix
-    print(name, tabulate(s, tablefmt="rounded_outline", headers="firstrow"), sep="\n")
+    print(name, tabulate(s, tablefmt="rounded_outline", headers="firstrow", floatfmt="g"), sep="\n")
 
 
 def main():
-    """
     # Get user's matrix
     matrix = []
     try:
@@ -126,7 +130,7 @@ def main():
 
     for i in range(n):
         # Insert row by row
-        row = input(f"Fila {i+1} (x1, x2,..., xn, b): ").split(",")
+        row = list(eval(input(f"Fila {i+1} [x1, x2,..., xn, b]: ")))
         # Row validation
         for x in row:
             try:
@@ -142,18 +146,10 @@ def main():
 
     # Print user's matrix
     print_matrix("Matriz ingresada", matrix)
-    """
 
-    """ This is for testing purposes, need to adapt user's instead of hardcoded matrix """
-    # Resolve and print solution vector
-    matrix = [[1, 1, -1, 0], 
-              [2, 1, -1, 1], 
-              [0, -1, 1, 1]]
-    #matrix= [[2, 3, 1, 0], 
-    #          [1, 1, 2, 1], 
-    #          [1, -1, -1, -1]]
+    # Solve and print matrix's solution
     solution = resolve(matrix)
-    print(*[f"x{i+1} = {solution[i]}" for i in range(len(solution))], sep="\n")
+    print(*[f"x{i+1} = {solution[i]:.2f}" for i in range(len(solution))], sep="\n")
 
 
 if __name__ == "__main__":
