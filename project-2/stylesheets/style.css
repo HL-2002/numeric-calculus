@@ -1,0 +1,109 @@
+/* Clear default margin and color */
+body {
+    margin: 0px;
+    background-color: #d5d9e0;
+    font-family: sans-serif;
+}
+
+/* Style the header */
+h1 {
+    background: linear-gradient(180deg, rgba(1,12,30,1) 0%, rgba(0,30,56,1) 27%, rgba(74,109,136,1) 100%);
+    color: white;
+    margin-top: 0px;
+    box-shadow: 0px 0.1px 3px 0.25rem #4a6d88;
+    padding: 0.5rem;
+    padding-bottom: 0.25rem;
+    text-align: center;
+}
+
+/* Style the navigation bar */
+menu {
+    list-style-type: none;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.item{
+    background-color: rgb(232, 111, 111);
+    border-color: rgb(177, 66, 66);
+    color: black;
+}
+
+.item:hover{
+    background-color: rgb(177, 66, 66);
+    border-color: rgb(232, 111, 111);
+    color: white;
+
+}
+
+button:active {
+    transform:scale(0.8)
+}
+
+
+/* Style the content */
+button {
+    margin-right: 1rem;
+    font-size: 1rem;
+    background-color: #4a6d88;
+    border-color: #001e38;
+    color: white;
+    box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.2), 0 0.5px 3px 0 rgba(0,0,0,0.19);
+    border-radius: 0.5vw;
+    border-style:solid;
+    border-width: 1px;
+    transition-duration: 0.3s;
+}
+
+button:hover {
+    background-color: #001e38;
+    border-color: #4a6d88;
+    color: white;
+    box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.285), 0 0.5px 3px 0 rgba(0, 0, 0, 0.335);
+}
+
+input{
+    border-radius: 0.5vw;
+    border-style:solid;
+    border-width: 1px;
+    background-color: #bdc2cb;
+    border-color:#a5abb3;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.left, .right {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #c6cdd7;
+    box-shadow: 0px 0px 10px 3px #b7bdc5;
+    border-radius: 0.5vw;
+}
+
+.left *{
+    margin:0.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 0px;
+    box-shadow: 0px 5px 5px 1px #b7bdc5;
+    padding: 0.5rem;
+    display:block;
+}
+
+blockquote {
+    font-weight: bold;
+    font-style: italic;
+    font-family: courier;
+}
+

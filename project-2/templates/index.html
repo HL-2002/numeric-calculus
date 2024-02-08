@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title> Proyect 2 </title>
+        <link rel="stylesheet" href="{{ url_for('stylesheets', path='/style.css')}}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1> PROYECT 2 </h1>
+        <menu>
+            <li> <button class="item" onclick="location.href='{{ url_for('power') }}';"> Power method </button></li>
+            <li> <button class="item" onclick="location.href='{{ url_for('taylor') }}';"> Taylor interpolation </button> </li>
+        </menu>
+    </body>
+</html>
