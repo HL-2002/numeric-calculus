@@ -73,6 +73,7 @@ input{
     border-width: 1px;
     background-color: #bdc2cb;
     border-color:#a5abb3;
+    width: 90%;
 }
 
 section {
@@ -88,7 +89,7 @@ section {
     border-radius: 0.5vw;
 }
 
-.left *{
+.left *, .right *{
     margin:0.5rem;
 }
 
