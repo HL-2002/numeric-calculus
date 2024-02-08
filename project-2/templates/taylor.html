@@ -5,6 +5,18 @@
         <link rel="stylesheet" href="{{ url_for('stylesheets', path='/style.css')}}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            function send() {
+                let f = document.getElementById("f").value;
+                let a = document.getElementById("a").value;
+                let x = document.getElementById("x").value;
+
+                if (f != "" && a != "" && x != "")
+                    return location.href= "{{ url_for('interpolation') }}" + "?func=" + f + "&a=" + a + "&x=" + x;
+                else
+                    alert("All fields are required")
+            }
+        </script>
     </head>
     <body>
         <h1> PROYECT 2 </h1>
@@ -23,7 +35,6 @@
                             <option value="sin(x)">
                             <option value="cos(x)">
                             <option value="exp(x)">
-                            <option value="log(x)">
                         </datalist>
                         <br>
 
@@ -35,22 +46,22 @@
                         <input type="number" id="x">
                         <br>
 
-                        <button id="calculate_taylor"> Calculate </button>
+                        <button id="calculate_taylor" onclick="send()"> Calculate </button>
                     </div>
                     <div class="right"> 
                         <h3> OUTPUT </h3>
                         <section>
                             <div>
                                 <p> Function </p>
-                                <blockquote id="f_display"> sin(x) </blockquote>
+                                <blockquote id="f_display"> {{f}} </blockquote>
                                 <p> Point of expansion </p>
-                                <blockquote id="a_display"> a </blockquote>
+                                <blockquote id="a_display"> {{a}} </blockquote>
                                 <p> Interpolation point </p>
-                                <blockquote id="x_display"> x </blockquote>
+                                <blockquote id="x_display"> {{x}} </blockquote>
                             </div>
                             <div>
-                                <p> Interpolated value: </p>
-                        <blockquote id="interpolation">  value  </blockquote>
+                                <p> Interpolated value </p>
+                        <blockquote id="interpolation">  {{result}}  </blockquote>
                             </div>
                         </section>
                     </div>

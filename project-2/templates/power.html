@@ -5,6 +5,17 @@
         <link rel="stylesheet" href="{{ url_for('stylesheets', path='/style.css')}}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            function send() {
+                let m = document.getElementById("matrix").value;
+                let n = document.getElementById("n").value;
+
+                if (m != "" && n != "")
+                    return location.href= "{{ url_for('eigen') }}" + "?m=" + m + "&n=" + n;
+                else
+                    alert("All fields are required")
+            }
+        </script>
     </head>
     <body>
         <h1> PROYECT 2 </h1>
@@ -26,7 +37,7 @@
                     <input type="number" id="n">
 
                     <br>
-                    <button id="calculate_eigen"> Calculate </button>
+                    <button id="calculate_eigen" onclick="send()"> Calculate </button>
 
                 </div>
                 
@@ -35,15 +46,24 @@
                     <section>   
                         <div class="display">   
                             <p> Matrix: </p>
-                            <blockquote id="matrix_display">1, 2, 3 <br> 4, 5, 6 <br> 7, 8, 9</blockquote>
+                            <blockquote id="matrix_display"> 
+                                {%for array in m%}
+                                <p> {{array}} </p>
+                                {% endfor %}
+                            </blockquote>
                             <p> Iterations: </p>
-                            <blockquote id="n_display"> n </blockquote> 
+                            <blockquote id="n_display"> {{n}} </blockquote> 
                         </div>
                         <div class="results">   
                             <p> Dominant eigenvalue: </p>
-                            <blockquote id="eigenvalue">  lambda  </blockquote>
+                            <blockquote id="eigenvalue">  {{value}}  </blockquote>
                             <p> Dominant eigenvector: </p>
-                            <blockquote id="eigenvector">  vector  </blockquote>
+                            <blockquote id="eigenvector">  
+                                {%for v in vector%}
+                                <p> {{v}} </p>
+                                {% endfor %}
+                                
+                            </blockquote>
                         </div>
                     </section>
                 </div>

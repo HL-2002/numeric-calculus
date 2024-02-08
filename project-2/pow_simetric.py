@@ -12,11 +12,6 @@ def method_pow_simetric(matrix : np.matrix ,interactions:int)-> tuple:
     Returns:
     tuple: A tuple containing the dominant eigenvector and eigenvalue.
     """
-    
-    # check if the matrix is simetric
-    if not ( np.equal(matrix,matrix.T).all() or  matrix.shape[0] == matrix.shape[1] ):
-        print("The matrix is not simetric")
-        exit(0)
  
     # vector 
     initial  = np.random.rand(matrix.shape[0],1)
@@ -31,10 +26,7 @@ def method_pow_simetric(matrix : np.matrix ,interactions:int)-> tuple:
     
 
     return matrix2, np.dot(np.dot(matrix,yx_ml).T,yx_ml) / np.dot(yx_ml.T,yx_ml)
-    
-    
-    
-    
+
 
 def test():
     m = np.matrix([[3.556, -1.778,0], [-1.778, 3.556,-1.778], [0,-1.778,3.556]])
