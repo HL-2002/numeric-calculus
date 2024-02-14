@@ -1,3 +1,8 @@
+"""
+To be launched using: uvicorn api:app --reload
+Before trying to launch it, be sure to: pip install fastapi
+"""
+
 # FastAPI imports
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
